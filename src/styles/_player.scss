@@ -1,0 +1,26 @@
+.Player{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.time-control{
+    display: flex;
+    width: 55%;
+    // align-items: center;
+    // justify-content: space-around;
+    input{
+        width: 90%;
+        padding: 1rem 0rem;
+    }
+    p{
+        padding: 1rem;
+    }
+}
+
+.play-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+}
