@@ -50,8 +50,8 @@ export default function Player({ currentSong , isPlaying , setIsPlaying }) {
   }
   //state
   const [songInfo, setSongInfo] = useState({
-    duration: '',
-    currentTime: '',
+    duration: 0,
+    currentTime: 0,
   });
 
   return (
@@ -69,27 +69,20 @@ export default function Player({ currentSong , isPlaying , setIsPlaying }) {
       </div>
       <div className="play-control">
         <FontAwesomeIcon
-          className="skip-back"
+          className="skip-back svg"
           size="2x"
           icon={faAngleLeft}
         ></FontAwesomeIcon>
-        {isPlaying ? (
+       
           <FontAwesomeIcon
             className="play"
-            icon={faPause}
+            icon={isPlaying ? faPause : faPlay}
             onClick={playSongHandler}
             size="2x"
           />
-        ) : (
-          <FontAwesomeIcon
-            className="Play"
-            icon={faPlay}
-            size="2x"
-            onClick={playSongHandler}
-          />
-        )}
+
         <FontAwesomeIcon
-          className="skip-forward"
+          className="skip-forward svg"
           size="2x"
           icon={faAngleRight}
         ></FontAwesomeIcon>
