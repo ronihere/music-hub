@@ -1,4 +1,4 @@
-import React, { useRef , useState} from "react";
+import React, {  useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -7,8 +7,7 @@ import {
   faPause
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Player({ currentSong , isPlaying , setIsPlaying }) {
-  const audioRef = useRef(null);
+export default function Player({ currentSong , isPlaying , setIsPlaying ,audioRef}) {
   
 
   //functions
@@ -41,8 +40,6 @@ export default function Player({ currentSong , isPlaying , setIsPlaying }) {
     
     audioRef.current.currentTime = event.target.value;
     console.log(event.target.value);
-    console.log(audioRef.current.currentTime);
-    console.log(isPlaying);
     setSongInfo({
       ...songInfo,
       currentTime: event.target.value,
@@ -60,7 +57,7 @@ export default function Player({ currentSong , isPlaying , setIsPlaying }) {
         <p>{getTime(songInfo.currentTime)}</p>
         <input
           min={0}
-          max={songInfo.duration}
+          max={String(songInfo.duration)}
           value={songInfo.currentTime}
           onChange={dragHandler}
           type="range"

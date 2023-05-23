@@ -11,6 +11,10 @@
     h2{
         padding: 1rem 3rem;
     }
+    transition: all 0.5s ease;
+    transform: translateX(-100%);
+    opacity: 0;
+    
 }
 .library-songs{
     display: flex;
@@ -40,4 +44,11 @@
     h4{
         font-size: 0.7rem;
     }
+}
+.selected{
+    background: rgb(158, 211, 222);
+}
+.library-active{
+    transform: translateX(0%);
+    opacity: 1;
 }
