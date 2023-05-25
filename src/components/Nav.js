@@ -7,7 +7,7 @@ export default function Nav({ libraryStatus, setLibraryStatus }) {
   }
   return (
     <nav>
-      <h1>waves</h1>
+      <h1>Waves</h1>
       <button onClick={libraryVisibilityHandler}>
         Library
         <FontAwesomeIcon icon={faMusic} />

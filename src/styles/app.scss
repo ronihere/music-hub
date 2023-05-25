@@ -12,6 +12,12 @@ h1,h2,h3{
 body{
     font-family: 'Lato', sans-serif;
 }
+.App{
+    transition: all 0.6s ease;
+}
+.library-open{
+    margin-left: 30%;
+}
 @import "./song";
 @import "./player";
 @import "./_library";

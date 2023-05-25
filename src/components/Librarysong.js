@@ -1,5 +1,5 @@
 import React from "react";
-
+import { playAudio } from "../util";
 export default function Librarysong({
   song,
   setCurrentSong,
@@ -11,18 +11,13 @@ export default function Librarysong({
 }) {
   let songSelectHandler = () => {
     setCurrentSong(song);
-    songs.forEach(element => {
-      console.log(':::', element.id);
-    });
     let newSongs = songs.map((allSong) => {
-      // console.log(song.id);
       if (allSong.id === song.id) {
         return {
           ...allSong,
           active: true,
         };
       } else {
-        
         return {
           ...allSong,
           active: false,
@@ -31,14 +26,7 @@ export default function Librarysong({
     });
     setSongs(newSongs);
     song.active = true;
-    
-    audioRef.current.play().then((data) => {
-      audioRef.current.play();
-    });
-    setIsPlaying(false);
-    setTimeout(() => {
-      setIsPlaying(true);
-    }, 1000);
+    playAudio(audioRef, setIsPlaying);
   };
   return (
     <div
